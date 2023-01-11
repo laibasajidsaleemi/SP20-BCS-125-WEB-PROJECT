@@ -1,0 +1,91 @@
+<section class="h-100 h-custom" style="background-color: #eee">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+            <div class="row">
+              <div class="col-lg-7">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <p class="mb-1"><strong>Cart</strong></p>
+                  </div>
+                </div>
+
+                <% for( let i = 0; i < products.length; i++ ) { %>
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src="/images/uploaded/<%= products[i].image %> "
+                            class="img-fluid rounded-3"
+                            alt="Shopping item"
+                            style="width: 65px"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <h5><%= products[i].name %></h5>
+                          <p class="small mb-0"><%= products[i].brand %></p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px">
+                          <h5 class="fw-normal mb-0">1</h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0"><%= products[i].price %></h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0"><%= products[i].description %></h5>
+                        </div>
+                        <div style="width: 80px">
+                          <h5 class="mb-0"><%= products[i].tags %></h5>
+                        </div>
+                        <a href="#!" style="color: #cecece"
+                          ><i class="fas fa-trash-alt"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+              </div>
+              <div class="col-lg-5">
+                <div class="card bg-primary text-white rounded-3">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h5 class="mb-0">Cart details</h5>
+                    </div>
+
+                    <p class="small mb-2">Products</p>
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2"><%= total %></p>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. sales taxes: <%= 300 %> )</p>
+                      <p class="mb-2"><%= total+300 %></p>
+                    </div>
+
+                    <a href="/" class="btn btn-secondary btn-lg btn-block"
+                      >Continue Shopping</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

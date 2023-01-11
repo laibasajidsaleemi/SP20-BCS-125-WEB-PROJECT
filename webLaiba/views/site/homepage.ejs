@@ -1,0 +1,22 @@
+<div style="padding-top: 8%; padding-left: 8%;" class="row">
+  <% for( let i = 0; i < products.length; i++ ) { %>
+  <div class="col-sm-6 card" style="width: 18rem">
+    <img
+      class="card-img-top"
+      src="/images/uploaded/<%=products[i].image %>"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h3 class="card-title">Name: <%= products[i].name %></h3>
+      <h3 class="card-title">Price: <%= products[i].price %></h3>
+      <h5 class="card-title">Brand: <%= products[i].brand %></h5>
+      <p class="card-text">Description: <%= products[i].description %></p>
+      <p class="card-text">Tags: <%= products[i].tags %></p>
+      <a href="/add-cart/<%=products[i]._id %>" class="btn btn-info w-full"
+        >Add To Cart</a
+      >
+      <a href="/delete/<%=products[i]._id  %>" class="btn btn-danger w-full">Delete</a>
+    </div>
+  </div>
+  <% } %>
+</div>
